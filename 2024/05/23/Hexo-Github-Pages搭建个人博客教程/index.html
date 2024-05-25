@@ -19,17 +19,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Hexo+Github Pages搭建个人博客首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）下面进入主题：我们需要：  一台电脑（废话） 一个github账号（注册很简单，只是要一个邮箱） 一颗不怕困难的心  让我们开始吧！打开电脑，创建一个用于存放你的博客的文件夹；安装npm：打开这个链接：https:&#x2F;&#x2F;nodejs.org&#x2F;en点击那个巨大的绿色按钮下载之后就是傻瓜式安装，注">
+    <meta name="description" content="Hexo+Github Pages搭建个人博客首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）下面进入主题：我们需要：  一台电脑（废话） 一个github账号（注册很简单，只是要一个邮箱） 一颗不怕困难的心  让我们开始吧！打开电脑，创建一个用于存放你的博客的文件夹；安装npm：打开这个链接：node.js注意是英文网站，如下图点击那个巨大的绿色按钮下载之后就是傻瓜式安装，注意安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+Github Pages搭建个人博客教程">
 <meta property="og:url" content="http://example.com/2024/05/23/Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hexo+Github Pages搭建个人博客首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）下面进入主题：我们需要：  一台电脑（废话） 一个github账号（注册很简单，只是要一个邮箱） 一颗不怕困难的心  让我们开始吧！打开电脑，创建一个用于存放你的博客的文件夹；安装npm：打开这个链接：https:&#x2F;&#x2F;nodejs.org&#x2F;en点击那个巨大的绿色按钮下载之后就是傻瓜式安装，注">
+<meta property="og:description" content="Hexo+Github Pages搭建个人博客首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）下面进入主题：我们需要：  一台电脑（废话） 一个github账号（注册很简单，只是要一个邮箱） 一颗不怕困难的心  让我们开始吧！打开电脑，创建一个用于存放你的博客的文件夹；安装npm：打开这个链接：node.js注意是英文网站，如下图点击那个巨大的绿色按钮下载之后就是傻瓜式安装，注意安装">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tg-image.com/file/1dfe7fee90a8019d8d7ac.png">
 <meta property="article:published_time" content="2024-05-23T04:33:17.000Z">
-<meta property="article:modified_time" content="2024-05-24T13:11:12.051Z">
+<meta property="article:modified_time" content="2024-05-24T23:14:53.151Z">
 <meta property="article:author" content="Lzq">
+<meta property="article:tag" content="Hexo搭建个人博客">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tg-image.com/file/1dfe7fee90a8019d8d7ac.png">
 
@@ -89,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,6 +158,11 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
 
@@ -217,7 +223,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-24 21:11:12" itemprop="dateModified" datetime="2024-05-24T21:11:12+08:00">2024-05-24</time>
+      <time title="修改时间：2024-05-25 07:14:53" itemprop="dateModified" datetime="2024-05-25T07:14:53+08:00">2024-05-25</time>
     </span>
 
   
@@ -235,7 +241,7 @@
 <li>一个github账号（注册很简单，只是要一个邮箱）</li>
 <li>一颗不怕困难的心</li>
 </ul>
-<h3 id="让我们开始吧！"><a href="#让我们开始吧！" class="headerlink" title="让我们开始吧！"></a>让我们开始吧！</h3><p>打开电脑，创建一个用于存放你的博客的文件夹；<br>安装npm：打开这个链接：<a target="_blank" rel="noopener" href="https://nodejs.org/en">https://nodejs.org/en</a><br>点击那个巨大的绿色按钮<br><img src="https://tg-image.com/file/1dfe7fee90a8019d8d7ac.png"><br>下载之后就是傻瓜式安装，注意安装路径<strong>不要有空格或中文</strong>。<br>安装好了，win+r输入cmd，回车。再输入 <code>npm -v</code>。<br>如果出现一些版本信息，那么恭喜你，可以直接往下看了！</p>
+<h3 id="让我们开始吧！"><a href="#让我们开始吧！" class="headerlink" title="让我们开始吧！"></a>让我们开始吧！</h3><p>打开电脑，创建一个用于存放你的博客的文件夹；<br>安装npm：打开这个链接：<a target="_blank" rel="noopener" href="https://nodejs.org/en">node.js注意是英文网站，如下图</a><br>点击那个巨大的绿色按钮<br><img src="https://tg-image.com/file/1dfe7fee90a8019d8d7ac.png"><br>下载之后就是傻瓜式安装，注意安装路径<strong>不要有空格或中文</strong>。<br>安装好了，win+r输入cmd，回车。再输入 <code>npm -v</code>。<br>如果出现一些版本信息，那么恭喜你，可以直接往下看了！<br>不然的话，请自行在 Internet 中搜索”npm配置环境变量”<br>出现了版本信息后，再打开这个链接并下载它：<a target="_blank" rel="noopener" href="https://github.com/git-for-windows/git/releases/download/v2.45.1.windows.1/Git-2.45.1-64-bit.exe">git bash下载链接</a><br>如果出现类似 404ERROR 滞留错误信息，请访问这个网站，手动下载：<a target="_blank" rel="noopener" href="https://gitforwindows.org/">gitforwindows</a></p>
 
     </div>
 
@@ -244,6 +250,9 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag"># Hexo搭建个人博客</a>
+          </div>
 
         
 

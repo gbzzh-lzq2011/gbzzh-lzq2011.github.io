@@ -146,7 +146,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -178,6 +178,89 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/25/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lzq">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/25/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/" class="post-title-link" itemprop="url">原码、反码和补码</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-05-25 11:01:20 / 修改时间：18:31:46" itemprop="dateCreated datePublished" datetime="2024-05-25T11:01:20+08:00">2024-05-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="原码、反码和补码都是计算机内部表示数字的方法，由于-0-这个-捣蛋鬼-特殊值，现在的计算机用的都是补码"><a href="#原码、反码和补码都是计算机内部表示数字的方法，由于-0-这个-捣蛋鬼-特殊值，现在的计算机用的都是补码" class="headerlink" title="原码、反码和补码都是计算机内部表示数字的方法，由于 0 这个 捣蛋鬼 特殊值，现在的计算机用的都是补码"></a>原码、反码和补码都是计算机内部表示数字的方法，由于 0 这个 <del>捣蛋鬼</del> 特殊值，现在的计算机用的都是补码</h2><h3 id="这篇博客将会让你能够回答以下问题"><a href="#这篇博客将会让你能够回答以下问题" class="headerlink" title="这篇博客将会让你能够回答以下问题"></a>这篇博客将会让你能够回答以下问题</h3><ul>
+<li>什么是原码、反码和补码？</li>
+<li>三者有什么区别？</li>
+<li>三者之间如何转换？</li>
+<li>为什么说 0 是个<del>捣蛋鬼</del>特殊值？</li>
+</ul>
+<h3 id="1-什么是原码、反码和补码？"><a href="#1-什么是原码、反码和补码？" class="headerlink" title="1. 什么是原码、反码和补码？"></a>1. 什么是原码、反码和补码？</h3><ol start="0">
+<li>在计算机内部，所有东西都是用<strong>二进制</strong>来存储和运算的，由此产生了一个问题：怎么存储？</li>
+<li>原码：一开始，人们觉得这不是问题，直接转换成二进制呗，这就是所谓的”原码”。</li>
+<li>反码：反码其实有点奇葩，如果一个数为整数，则和原码一毛一样，若为负数，则符号位不变，其余各位取反。这种方式看起来和原码不同，但是还是没有逮到0这个<del>讨厌鬼</del>特殊值。虽然奇葩，但是有些早期计算机确实是这么做的。</li>
+<li>补码：重头戏来了！补码的规则是：正数还是按原码，负数则是它的反码+1（注意是二进制！）。这种方式解决了“0”。</li>
+<li>0：本文提到了很多次“0”，这里是指：在得数为零时，原码和反码会出现0和-0两种结果，但是0不应当有正负。或者，得数本应是0，却得出错误的结果。于是，通过补码，解决了这个问题。问题如下：</li>
+</ol>
+<p><code>0001（1）+ 1001（-1）= 1010（-2）</code><br>可是，本来应该是<code>(+1) + (-1) = 0</code><br>改用反码后，这一问题得到了解决：<code>0001(+1的反码)+1111(-1的反码)=1111（-0）</code><br>但是，还有一颗“蛀牙”：<code>1111(-0) 0000(+0)</code>，0还有正负？<br>于是，补码诞生，我们的目标是“没有蛀牙！”</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/23/Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -196,7 +279,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/23/Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">Hexo+Github Pages搭建个人博客教程</a>
+          <a href="/2024/05/23/Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta-container">
@@ -214,7 +297,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-25 07:14:53" itemprop="dateModified" datetime="2024-05-25T07:14:53+08:00">2024-05-25</time>
+      <time title="修改时间：2024-05-25 08:36:51" itemprop="dateModified" datetime="2024-05-25T08:36:51+08:00">2024-05-25</time>
     </span>
 
   
@@ -227,7 +310,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Hexo-Github-Pages搭建个人博客"><a href="#Hexo-Github-Pages搭建个人博客" class="headerlink" title="Hexo+Github Pages搭建个人博客"></a>Hexo+Github Pages搭建个人博客</h1><h2 id="首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）"><a href="#首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）" class="headerlink" title="首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）"></a>首先声明：题目中的方式是<strong>完全免费</strong>的（当然你要有一台电脑qaq）</h2><h3 id="下面进入主题："><a href="#下面进入主题：" class="headerlink" title="下面进入主题："></a>下面进入主题：</h3><p>我们需要：</p>
+          <hr>
+<h2 id="title-Hexo-Github-Pages搭建个人博客教程date-2024-05-23-12-33-17tags-Hexo搭建个人博客"><a href="#title-Hexo-Github-Pages搭建个人博客教程date-2024-05-23-12-33-17tags-Hexo搭建个人博客" class="headerlink" title="title: Hexo+Github Pages搭建个人博客教程date: 2024-05-23 12:33:17tags: Hexo搭建个人博客"></a>title: Hexo+Github Pages搭建个人博客教程<br>date: 2024-05-23 12:33:17<br>tags: Hexo搭建个人博客</h2><h2 id="首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）"><a href="#首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）" class="headerlink" title="首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）"></a>首先声明：题目中的方式是<strong>完全免费</strong>的（当然你要有一台电脑qaq）</h2><h3 id="下面进入主题："><a href="#下面进入主题：" class="headerlink" title="下面进入主题："></a>下面进入主题：</h3><p>我们需要：</p>
 <ul>
 <li>一台电脑（废话）</li>
 <li>一个github账号（注册很简单，只是要一个邮箱）</li>

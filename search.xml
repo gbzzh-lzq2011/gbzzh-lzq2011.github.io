@@ -1,78 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>原码、反码和补码</title>
-    <url>/2024/05/25/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/</url>
-    <content><![CDATA[<h2 id="原码、反码和补码都是计算机内部表示数字的方法，由于-0-这个-捣蛋鬼-特殊值，现在的计算机用的都是补码"><a href="#原码、反码和补码都是计算机内部表示数字的方法，由于-0-这个-捣蛋鬼-特殊值，现在的计算机用的都是补码" class="headerlink" title="原码、反码和补码都是计算机内部表示数字的方法，由于 0 这个 捣蛋鬼 特殊值，现在的计算机用的都是补码"></a>原码、反码和补码都是计算机内部表示数字的方法，由于 0 这个 <del>捣蛋鬼</del> 特殊值，现在的计算机用的都是补码</h2><h3 id="这篇博客将会让你能够回答以下问题"><a href="#这篇博客将会让你能够回答以下问题" class="headerlink" title="这篇博客将会让你能够回答以下问题"></a>这篇博客将会让你能够回答以下问题</h3><ul>
-<li>什么是原码、反码和补码？</li>
-<li>三者有什么区别？</li>
-<li>三者之间如何转换？</li>
-<li>为什么说 0 是个<del>捣蛋鬼</del>特殊值？</li>
-</ul>
-<h3 id="1-什么是原码、反码和补码？"><a href="#1-什么是原码、反码和补码？" class="headerlink" title="1. 什么是原码、反码和补码？"></a>1. 什么是原码、反码和补码？</h3><ol start="0">
-<li>在计算机内部，所有东西都是用<strong>二进制</strong>来存储和运算的，由此产生了一个问题：怎么存储？</li>
-<li>原码：一开始，人们觉得这不是问题，直接转换成二进制呗，这就是所谓的”原码”。</li>
-<li>反码：反码其实有点奇葩，如果一个数为整数，则和原码一毛一样，若为负数，则符号位不变，其余各位取反。这种方式看起来和原码不同，但是还是没有逮到0这个<del>讨厌鬼</del>特殊值。虽然奇葩，但是有些早期计算机确实是这么做的。</li>
-<li>补码：重头戏来了！补码的规则是：正数还是按原码，负数则是它的反码+1（注意是二进制！）。这种方式解决了“0”。</li>
-<li>0：本文提到了很多次“0”，这里是指：在得数为零时，原码和反码会出现0和-0两种结果，但是0不应当有正负。或者，得数本应是0，却得出错误的结果。于是，通过补码，解决了这个问题。问题如下：</li>
-</ol>
-<p><code>0001（1）+ 1001（-1）= 1010（-2）</code><br>可是，本来应该是<code>(+1) + (-1) = 0</code><br>改用反码后，这一问题得到了解决：<code>0001(+1的反码)+1111(-1的反码)=1111（-0）</code><br>但是，还有一颗“蛀牙”：<code>1111(-0) 0000(+0)</code>，0还有正负？<br>于是，补码诞生，我们的目标是“没有蛀牙！”</p>
-]]></content>
-      <tags>
-        <tag>计算机底层知识</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>搭建hexo+GitHub pages 个人博客</title>
-    <url>/2024/06/01/%E6%90%AD%E5%BB%BAhexo-GitHub-pages-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h2 id="首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）"><a href="#首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）" class="headerlink" title="首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）"></a>首先声明：题目中的方式是<strong>完全免费</strong>的（当然你要有一台电脑qaq）</h2><h3 id="下面进入主题"><a href="#下面进入主题" class="headerlink" title="下面进入主题"></a>下面进入主题</h3><p>我们需要：</p>
-<ul>
-<li>一台电脑（废话）</li>
-<li>一个github账号（注册很简单，只是要一个邮箱）</li>
-<li>一颗不怕困难的心</li>
-</ul>
-<h3 id="让我们开始吧"><a href="#让我们开始吧" class="headerlink" title="让我们开始吧"></a>让我们开始吧</h3><p>打开电脑，创建一个用于存放你的博客的文件夹；<br>安装npm：打开这个链接：<a href="https://nodejs.org/">node.js</a>注意是英文网站，如下图。<br>点击那个巨大的绿色按钮<br><img src="https://tg-image.com/file/1dfe7fee90a8019d8d7ac.png" alt="绿色按钮"><br>下载之后就是傻瓜式安装，注意安装路径<strong>不要有空格或中文</strong>。<br>安装好了，win+r输入cmd，回车。再输入 <code>npm -v</code>。<br>如果出现一些版本信息，那么恭喜你，可以直接往下看了！<br>不然的话，请自行在 Baidu 或 bing 中搜索”npm配置环境变量”<br>出现了版本信息后，再打开这个链接并下载它：<a href="https://github.com/git-for-windows/git/releases/download/v2.45.1.windows.1/Git-2.45.1-64-bit.exe">Git Bash下载链接</a><br>如果出现类似 404ERROR 之类的错误信息，请访问这个网站，手动下载： <a href="https://gitforwindows.org/">Git for Windows</a>。<br>众所周知，国内的 Github 访问一直不太好用，可以看一下我的这篇文章里面的 fastGitHub 工具，轻巧好用，可以说是完美解决了这个问题（在不用魔法的情况下）</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>几款电脑必备软件</title>
-    <url>/2024/06/08/%E5%87%A0%E6%AC%BE%E7%94%B5%E8%84%91%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="前言：本文分为2部分"><a href="#前言：本文分为2部分" class="headerlink" title="前言：本文分为2部分"></a>前言：本文分为2部分</h2><ul>
-<li>日常必备软件</li>
-<li>程序员必备软件</li>
-</ul>
-<ol>
-<li>日常必备软件<ol>
-<li>Everything<ol>
-<li>介绍：相信各位久闻此款软件的大名了，但这里还是要加上一句：这款软件的搜索实在是太强了，索引之后在我400多个GB的C盘中搜索，真的就是秒出结果。而且据说他还有文件服务器的功能，喜欢折腾的可以试着挖掘一下。</li>
-<li>优点：速度快，轻便</li>
-<li>缺点：你认真的？</li>
-</ol>
-</li>
-<li>utools<ol>
-<li>介绍： 一个蛮有趣的小工具，官网宣传它是“新一代效率工具平台”，本身功能不算多，但有着大量的插件。</li>
-<li>优点：丝滑，界面漂亮，功能巨多。</li>
-<li>缺点，占用资源不小，而且似乎是强制安装在C盘。</li>
-</ol>
-</li>
-<li>IDM（Internet Download Manager）<ol>
-<li>介绍：一款广受好评的下载工具，具有着多线程下载的能力，搭配 Tampermonkey（油猴） 甚至可以实现网盘的高速在线下载。</li>
-<li>优点：下载速度极快，自定义功能强。</li>
-<li>缺点： 是付费软件，虽然网上的破解一搜一大把。</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>程序员必备软件</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>软件推荐Software</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>lzq的文章标签</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
+<search> 
+  
+  
+    
+    <entry>
+      <title>几款电脑必备软件</title>
+      <link href="/2024/06/08/%E5%87%A0%E6%AC%BE%E7%94%B5%E8%84%91%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"/>
+      <url>/2024/06/08/%E5%87%A0%E6%AC%BE%E7%94%B5%E8%84%91%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言：本文分为2部分"><a href="#前言：本文分为2部分" class="headerlink" title="前言：本文分为2部分"></a>前言：本文分为2部分</h2><ul><li>日常必备软件</li><li>程序员必备软件</li></ul><ol><li>日常必备软件<ol><li>Everything<ol><li>介绍：相信各位久闻此款软件的大名了，但这里还是要加上一句：这款软件的搜索实在是太强了，索引之后在我400多个GB的C盘中搜索，真的就是秒出结果。而且据说他还有文件服务器的功能，喜欢折腾的可以试着挖掘一下。</li><li>优点：<ul><li>速度快</li><li>轻便</li></ul></li><li>缺点：<ul><li>你认真的？</li></ul></li></ol></li><li>Utools<ol><li>介绍： 一个蛮有趣的小工具，官网宣传它是“新一代效率工具平台”，本身功能不算多，但有着大量的插件。</li><li>优点：<ul><li>丝滑且界面漂亮</li><li>功能巨多。</li></ul></li><li>缺点<ul><li>占用资源不小</li><li>似乎是强制安装在C盘。</li></ul></li></ol></li><li>IDM（Internet Download Manager）<ol><li>介绍：一款广受好评的下载工具，具有着多线程下载的能力，搭配 Tampermonkey（油猴） 甚至可以实现网盘的高速在线下载。</li><li>优点：<ul><li>下载速度极快</li><li>自定义功能强</li></ul></li><li>缺点：<ul><li>是付费软件<del>虽然网上的破解一搜一大把。</del></li></ul></li></ol></li></ol></li><li>程序员必备软件<ol><li>Visual Studio Code<ol><li>介绍：由微软开发，是一款好用的编辑器，支持 Windows、macOS、Linux三个平台，并且，通过搭建code-server服务器，可以实现浏览器中使用vscode并且编译运行！</li><li>优点：<ul><li>全平台通用</li><li>可高度自定义</li><li>微软出品，不用担心跑路</li><li>网上教程极多。</li></ul></li><li>缺点：<ul><li>打开速度较慢（尤其是在安装了很多插件之后）</li><li>占用较大（因为是 Electron 框架的）</li><li>网上的教程又鱼龙混杂，对新手不太友好</li></ul></li></ol></li><li>sublime text<ol><li>介绍：一款优雅的文本编辑器。在程序员中广受好评。</li><li>优点：<ul><li>极为轻便，就算安装几十个插件也能做到秒开</li><li>配置好之后界面可以很优雅</li><li>可高度自定义</li><li>配置好了之后就是一个瑞士军刀式的 IDE（ Integrated Development Environment，即集成开发环境 ）</li></ul></li><li>缺点：<ul><li>需要很多配置才能用来编写并编译各种语言的文件，所以对新手还是不太友好</li></ul></li></ol></li><li>fastGithub<br> 1.介绍：这个小工具就不太为人熟知了，它可以起到加速 GitHub 访问的作用，据说 Steam++ 也有这个作用，但是我个人不知为何用不了， fastGithub 倒是用得很好。<br> 2.优点：<br> - 你认真的？<br> 3.缺点：<br> - 你认真的？</li></ol></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 软件推荐Software </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>搭建hexo+GitHub pages 个人博客</title>
+      <link href="/2024/06/01/%E6%90%AD%E5%BB%BAhexo-GitHub-pages-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2024/06/01/%E6%90%AD%E5%BB%BAhexo-GitHub-pages-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）"><a href="#首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）" class="headerlink" title="首先声明：题目中的方式是完全免费的（当然你要有一台电脑qaq）"></a>首先声明：题目中的方式是<strong>完全免费</strong>的（当然你要有一台电脑qaq）</h2><h3 id="下面进入主题"><a href="#下面进入主题" class="headerlink" title="下面进入主题"></a>下面进入主题</h3><p>我们需要：</p><ul><li>一台电脑（废话）</li><li>一个github账号（注册很简单，只是要一个邮箱）</li><li>一颗不怕困难的心</li></ul><h3 id="让我们开始吧"><a href="#让我们开始吧" class="headerlink" title="让我们开始吧"></a>让我们开始吧</h3><p>打开电脑，创建一个用于存放你的博客的文件夹；<br>安装npm：打开这个链接：<a href="https://nodejs.org/">node.js</a>注意是英文网站，如下图。<br>点击那个巨大的绿色按钮<br><img src="https://tg-image.com/file/1dfe7fee90a8019d8d7ac.png" alt="绿色按钮"><br>下载之后就是傻瓜式安装，注意安装路径<strong>不要有空格或中文</strong>。<br>安装好了，win+r输入cmd，回车。再输入 <code>npm -v</code>。<br>如果出现一些版本信息，那么恭喜你，可以直接往下看了！<br>不然的话，请自行在 Baidu 或 bing 中搜索”npm配置环境变量”<br>出现了版本信息后，再打开这个链接并下载它：<a href="https://github.com/git-for-windows/git/releases/download/v2.45.1.windows.1/Git-2.45.1-64-bit.exe">Git Bash下载链接</a><br>如果出现类似 404ERROR 之类的错误信息，请访问这个网站，手动下载： <a href="https://gitforwindows.org/">Git for Windows</a>。<br>众所周知，国内的 Github 访问一直不太好用，可以看一下我的这篇文章里面的 fastGitHub 工具，轻巧好用，可以说是完美解决了这个问题（在不用魔法的情况下）</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>原码、反码和补码</title>
+      <link href="/2024/05/25/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/"/>
+      <url>/2024/05/25/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<h2 id="原码、反码和补码都是计算机内部表示数字的方法，由于-0-这个-捣蛋鬼-特殊值，现在的计算机用的都是补码"><a href="#原码、反码和补码都是计算机内部表示数字的方法，由于-0-这个-捣蛋鬼-特殊值，现在的计算机用的都是补码" class="headerlink" title="原码、反码和补码都是计算机内部表示数字的方法，由于 0 这个 捣蛋鬼 特殊值，现在的计算机用的都是补码"></a>原码、反码和补码都是计算机内部表示数字的方法，由于 0 这个 <del>捣蛋鬼</del> 特殊值，现在的计算机用的都是补码</h2><h3 id="这篇博客将会让你能够回答以下问题"><a href="#这篇博客将会让你能够回答以下问题" class="headerlink" title="这篇博客将会让你能够回答以下问题"></a>这篇博客将会让你能够回答以下问题</h3><ul><li>什么是原码、反码和补码？</li><li>三者有什么区别？</li><li>三者之间如何转换？</li><li>为什么说 0 是个<del>捣蛋鬼</del>特殊值？</li></ul><h3 id="1-什么是原码、反码和补码？"><a href="#1-什么是原码、反码和补码？" class="headerlink" title="1. 什么是原码、反码和补码？"></a>1. 什么是原码、反码和补码？</h3><ol start="0"><li>在计算机内部，所有东西都是用<strong>二进制</strong>来存储和运算的，由此产生了一个问题：怎么存储？</li><li>原码：一开始，人们觉得这不是问题，直接转换成二进制呗，这就是所谓的”原码”。</li><li>反码：反码其实有点奇葩，如果一个数为整数，则和原码一毛一样，若为负数，则符号位不变，其余各位取反。这种方式看起来和原码不同，但是还是没有逮到0这个<del>讨厌鬼</del>特殊值。虽然奇葩，但是有些早期计算机确实是这么做的。</li><li>补码：重头戏来了！补码的规则是：正数还是按原码，负数则是它的反码+1（注意是二进制！）。这种方式解决了“0”。</li><li>0：本文提到了很多次“0”，这里是指：在得数为零时，原码和反码会出现0和-0两种结果，但是0不应当有正负。或者，得数本应是0，却得出错误的结果。于是，通过补码，解决了这个问题。问题如下：</li></ol><p><code>0001（1）+ 1001（-1）= 1010（-2）</code><br>可是，本来应该是<code>(+1) + (-1) = 0</code><br>改用反码后，这一问题得到了解决：<code>0001(+1的反码)+1111(-1的反码)=1111（-0）</code><br>但是，还有一颗“蛀牙”：<code>1111(-0) 0000(+0)</code>，0还有正负？<br>于是，补码诞生，我们的目标是“没有蛀牙！”</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机底层知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+    
+    
+    <entry>
+      <title>lzq的文章标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+  
 </search>
